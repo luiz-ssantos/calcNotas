@@ -89,23 +89,23 @@ button:hover {
   font-size: 1.2em;
 }
 #container-nota200 {
-  background-color: #ffb6c1;
+  background-color: rgb(138, 138, 138);
 }
 #container-nota100 {
-  background-color: #e6e6fa;
+  background-color: rgb(37, 116, 169);
 }
 #container-nota50 {
-  background-color: #98ff98;
+  background-color: rgb(203, 124, 56);
 }
 #container-nota20 {
-  background-color: #b0e0e6;
+  background-color: rgb(218, 157, 41);
 }
 #container-nota10 {
-  background-color: #ffdab9;
+  background-color: rgb(183, 44, 42);
 }
 #container-nota5 {
-  background-color: #b0c4de;
+  background-color: rgb(133, 96, 144);
 }
 #container-nota2 {
-  background-color: #7fffd4;
+  background-color: rgb(44, 77, 143);
 }
