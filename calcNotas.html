@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Contador de Notas</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #264653;
+        margin-bottom: -0.3rem;
+      }
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .campo-nota {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #2a9d8f;
+      }
+      input[type="number"] {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1.2em;
+      }
+      .nota-soma {
+        margin-top: 5px;
+        color: #e76f51;
+        font-size: 1.2em;
+      }
+      .nota2 {
+        margin-bottom: 58px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      button {
+        flex: 1;
+        margin: 0 5px;
+        padding: 10px;
+        background-color: #2a9d8f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #f4a261;
+      }
+      .result {
+        margin-top: 20px;
+        margin-bottom: 1rem;
+        font-size: 1.5em;
+        text-align: center;
+        color: #264653;
+      }
+      .footer-fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+      }
+      .footer-fixed .buttons {
+        margin-top: 0;
+      }
+      .footer-fixed .result {
+        font-size: 1.2em;
+      }
+      #container-nota200 {
+        background-color: #ffb6c1;
+      }
+      #container-nota100 {
+        background-color: #e6e6fa;
+      }
+      #container-nota50 {
+        background-color: #98ff98;
+      }
+      #container-nota20 {
+        background-color: #b0e0e6;
+      }
+      #container-nota10 {
+        background-color: #ffdab9;
+      }
+      #container-nota5 {
+        background-color: #b0c4de;
+      }
+      #container-nota2 {
+        background-color: #7fffd4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contador de Notas</h1>
+    <div class="container" id="content">
+      <div class="campo-nota" id="container-nota200">
+        <label for="nota200">Quantidade de notas de R$200:</label
+        ><input
+          type="number"
+          id="nota200"
+          oninput="calcularTotal()"
+          placeholder="Digite a quantidade"
+        />
+        <div id="soma200" class="nota-soma">Soma: R$ 0,00</div>
+      </div>
+      <div class="campo-nota" id="container-nota100">
+        <label for="nota100">Quantidade de notas de R$100:</label
+        ><input
+          type="number"
+          id="nota100"
+          oninput="calcularTotal()"
+          placeholder="Digite a quantidade"
+        />
+        <div id="soma100" class="nota-soma">Soma: R$ 0,00</div>
+      </div>
+      <div class="campo-nota" id="container-nota50">
+        <label for="nota50">Quantidade de notas de R$50:</label
+        ><input
+          type="number"
+          id="nota50"
+          oninput="calcularTotal()"
+          placeholder="Digite a quantidade"
+        />
+        <div id="soma50" class="nota-soma">Soma: R$ 0,00</div>
+      </div>
+      <div class="campo-nota" id="container-nota20">
+        <label for="nota20">Quantidade de notas de R$20:</label
+        ><input
+          type="number"
+          id="nota20"
+          oninput="calcularTotal()"
+          placeholder="Digite a quantidade"
+        />
+        <div id="soma20" class="nota-soma">Soma: R$ 0,00</div>
+      </div>
+      <div class="campo-nota" id="container-nota10">
+        <label for="nota10">Quantidade de notas de R$10:</label
+        ><input
+          type="number"
+          id="nota10"
+          oninput="calcularTotal()"
+          placeholder="Digite a quantidade"
+        />
+        <div id="soma10" class="nota-soma">Soma: R$ 0,00</div>
+      </div>
+      <div class="campo-nota" id="container-nota5">
+        <label for="nota5">Quantidade de notas de R$5:</label
+        ><input
+          type="number"
+          id="nota5"
+          oninput="calcularTotal()"
+          placeholder="Digite a quantidade"
+        />
+        <div id="soma5" class="nota-soma">Soma: R$ 0,00</div>
+      </div>
+      <div class="campo-nota nota2" id="container-nota2">
+        <label for="nota2">Quantidade de notas de R$2:</label
+        ><input
+          type="number"
+          id="nota2"
+          oninput="calcularTotal()"
+          placeholder="Digite a quantidade"
+        />
+        <div id="soma2" class="nota-soma">Soma: R$ 0,00</div>
+      </div>
+    </div>
+    <div class="footer-fixed">
+      <div class="buttons">
+        <button onclick="resetarCampos()">Zerar Campos</button
+        ><button onclick="tirarPrint()">Tirar Print</button>
+      </div>
+      <div id="resultado" class="result">
+        Valor total: <br />
+        R$ 0,00
+      </div>
+    </div>
+    <script>
+      function formatarMoeda(valor) {
+        return valor.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        });
+      }
+      function calcularTotal() {
+        var nota200 = parseInt(document.getElementById("nota200").value) || 0;
+        var nota100 = parseInt(document.getElementById("nota100").value) || 0;
+        var nota50 = parseInt(document.getElementById("nota50").value) || 0;
+        var nota20 = parseInt(document.getElementById("nota20").value) || 0;
+        var nota10 = parseInt(document.getElementById("nota10").value) || 0;
+        var nota5 = parseInt(document.getElementById("nota5").value) || 0;
+        var nota2 = parseInt(document.getElementById("nota2").value) || 0;
+        var soma200 = nota200 * 200,
+          soma100 = nota100 * 100,
+          soma50 = nota50 * 50,
+          soma20 = nota20 * 20,
+          soma10 = nota10 * 10,
+          soma5 = nota5 * 5,
+          soma2 = nota2 * 2;
+        document.getElementById("soma200").innerHTML =
+          "Soma: " + formatarMoeda(soma200);
+        document.getElementById("soma100").innerHTML =
+          "Soma: " + formatarMoeda(soma100);
+        document.getElementById("soma50").innerHTML =
+          "Soma: " + formatarMoeda(soma50);
+        document.getElementById("soma20").innerHTML =
+          "Soma: " + formatarMoeda(soma20);
+        document.getElementById("soma10").innerHTML =
+          "Soma: " + formatarMoeda(soma10);
+        document.getElementById("soma5").innerHTML =
+          "Soma: " + formatarMoeda(soma5);
+        document.getElementById("soma2").innerHTML =
+          "Soma: " + formatarMoeda(soma2);
+        var total =
+          soma200 + soma100 + soma50 + soma20 + soma10 + soma5 + soma2;
+        document.getElementById("resultado").innerHTML =
+          "O valor total é: " + formatarMoeda(total);
+      }
+      function resetarCampos() {
+        document.getElementById("nota200").value = "";
+        document.getElementById("nota100").value = "";
+        document.getElementById("nota50").value = "";
+        document.getElementById("nota20").value = "";
+        document.getElementById("nota10").value = "";
+        document.getElementById("nota5").value = "";
+        document.getElementById("nota2").value = "";
+        calcularTotal();
+      }
+      function tirarPrint() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>
