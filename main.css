@@ -1,14 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f7f9fc;
   margin: 0;
   padding: 20px;
 }
+
 h1 {
   text-align: center;
   color: #264653;
-  margin-bottom: -0.3rem;
+  margin-top: 600px;
 }
+
+.custom-mt {
+  margin-top: 222px !important;
+}
+
 .container {
   max-width: 500px;
   margin: 0 auto;
@@ -17,17 +28,27 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+#content {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
 .campo-nota {
   padding: 15px;
-  margin: 10px 0;
+  margin: 3px 0;
   border-radius: 8px;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #2a9d8f;
 }
+
 input[type="number"] {
   width: 80%;
   padding: 10px;
@@ -35,19 +56,19 @@ input[type="number"] {
   border-radius: 5px;
   font-size: 1.2em;
 }
+
 .nota-soma {
   margin-top: 5px;
   color: #e76f51;
   font-size: 1.2em;
 }
-.nota2 {
-  margin-bottom: 58px;
-}
+
 .buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
+
 button {
   flex: 1;
   margin: 0 5px;
@@ -59,53 +80,88 @@ button {
   font-size: 1.2em;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #f4a261;
 }
+
 .result {
-  margin-top: 20px;
-  margin-bottom: 1rem;
-  font-size: 1.5em;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: #2a9d8f;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
   text-align: center;
-  color: #264653;
+  font-family: "Arial", sans-serif;
+
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
 }
-.footer-fixed {
+
+#contadorNotas {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0px;
+}
+
+.contNotas {
+  padding: -10px;
+}
+
+.lista-notas div {
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #264653;
+  font-size: 1.2em;
+}
+
+footer.footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
-  background-color: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f1f1f1;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  padding: 10px 20px;
 }
-.footer-fixed .buttons {
-  margin-top: 0;
+
+footer .text-muted {
+  color: #6c757d;
 }
-.footer-fixed .result {
-  font-size: 1.2em;
+
+footer .text-muted:hover {
+  color: #264653;
 }
-#container-nota200 {
-  background-color: rgb(138, 138, 138);
+
+footer a {
+  font-size: 0.875rem;
 }
-#container-nota100 {
-  background-color: rgb(37, 116, 169);
-}
-#container-nota50 {
-  background-color: rgb(203, 124, 56);
-}
-#container-nota20 {
-  background-color: rgb(218, 157, 41);
-}
-#container-nota10 {
-  background-color: rgb(183, 44, 42);
-}
-#container-nota5 {
-  background-color: rgb(133, 96, 144);
-}
-#container-nota2 {
-  background-color: rgb(44, 77, 143);
+
+footer a:hover {
+  text-decoration: underline;
 }
